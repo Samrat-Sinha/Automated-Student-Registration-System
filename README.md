@@ -22,9 +22,7 @@ In a Educational Institute every year  technology trainings are conducted during
 
 ### Roles for a Student:
 
-	1. Register himself in a course with a username and password (email should be the username)
-  
-	2. can update this details.
-	
+  1. Register himself in a course with a username and password (email should be the username).
+  2. can update this details.
   3. can see all the available course list and their seat availability.
 	
