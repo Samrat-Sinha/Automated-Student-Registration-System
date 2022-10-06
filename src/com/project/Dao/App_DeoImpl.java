@@ -20,11 +20,12 @@ public class App_DeoImpl implements App_Dao {
 
         try (Connection conn = DBUtil.provideConnection()) {
 
-            PreparedStatement ps =  conn.prepareStatement("Insert into course(courseName,courseTeacher,courseFees) values(?,?,?)");
+            PreparedStatement ps =  conn.prepareStatement("Insert into course values(?,?,?,?)");
 
-            ps.setString(1, course.getCourseName());
-            ps.setString(2,course.getCourseTeacher());
-            ps.setInt(3,course.getCourseFees());
+            ps.setString(1, course.getCourseId());
+            ps.setString(2, course.getCourseName());
+            ps.setString(3,course.getCourseTeacher());
+            ps.setInt(4,course.getCourseFees());
 
             int x = ps.executeUpdate();
             if(x>0){
@@ -94,7 +95,7 @@ public class App_DeoImpl implements App_Dao {
             ResultSet rs = ps.executeQuery();
 
             if(rs.next()){
-                int cid = rs.getInt("courseId");
+                String cid = rs.getString("courseId");
                 String cn = rs.getString("courseName");
                 String ct = rs.getString("courseTeacher");
                 int cf = rs.getInt("courseFees");
@@ -113,17 +114,24 @@ public class App_DeoImpl implements App_Dao {
 
     @Override
     public String createBatch(Batch batch) {
-        String message = "Btach Not Created";
+        String message = "Batch Not Created";
 
         try(Connection conn = DBUtil.provideConnection()){
 
-            conn.prepareStatement("")
+            PreparedStatement ps =  conn.prepareStatement("Insert into batch values(?,?,?,?)");
+            ps.setString(1,batch.getBatchId());
+            ps.setString(2,batch.getBatchName());
+            ps.setString(3,batch.getBatchCourse());
+            ps.setInt(4,batch.getBatchCapacity());
 
+            int x = ps.executeUpdate();
+
+            if(x>0){
+                message = "Batch Created Successfully";
+            }
         } catch (SQLException e) {
             e.getMessage();
         }
-
-
         return message;
     }
 

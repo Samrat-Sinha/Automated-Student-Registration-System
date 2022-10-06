@@ -2,37 +2,27 @@ package com.project.Beam;
 
 public class Batch {
 
-    private int batchId;
-    private int batchCurrStud;
-    private int batchCapacity;
+    private String batchId;
     private String batchName;
     private String batchCourse;
+    private int batchCapacity;
 
     public Batch() {
     }
 
-    public Batch(int batchId, int batchCurrStud, int batchCapacity, String batchName, String batchCourse) {
+    public Batch(String batchId, int batchCapacity, String batchName, String batchCourse) {
         this.batchId = batchId;
-        this.batchCurrStud = batchCurrStud;
-        this.batchCapacity = batchCapacity;
         this.batchName = batchName;
         this.batchCourse = batchCourse;
+        this.batchCapacity = batchCapacity;
     }
 
-    public int getBatchId() {
+    public String getBatchId() {
         return batchId;
     }
 
-    public void setBatchId(int batchId) {
+    public void setBatchId(String batchId) {
         this.batchId = batchId;
-    }
-
-    public int getBatchCurrStud() {
-        return batchCurrStud;
-    }
-
-    public void setBatchCurrStud(int batchCurrStud) {
-        this.batchCurrStud = batchCurrStud;
     }
 
     public int getBatchCapacity() {

@@ -1,5 +1,6 @@
 package com.project.FrontEnd;
 
+import com.project.Beam.Batch;
 import com.project.Beam.Course;
 import com.project.Dao.App_Dao;
 import com.project.Dao.App_DeoImpl;
@@ -42,9 +43,11 @@ public class StudentApp {
                         int choice = sc.nextInt();
                         if (choice == 1) {
 
+                            System.out.println("Enter Course ID");
+                            String cid = sc.next();
+
                             System.out.println("Enter Course Name");
                             String cname = sc.next();
-
 
                             System.out.println("Enter Course Teacher");
                             String cteach = sc.next();
@@ -54,6 +57,7 @@ public class StudentApp {
 
                             Course course = new Course();
 
+                            course.setCourseId(cid);
                             course.setCourseName(cname);
                             course.setCourseTeacher(cteach);
                             course.setCourseFees(cfee);
@@ -118,7 +122,30 @@ public class StudentApp {
                         if (choice == 5) {
 
 
+                            System.out.println("Enter Batch ID");
+                            String bid = sc.next();
 
+                            System.out.println("Enter Batch Name");
+                            String bname = sc.next();
+
+                            System.out.println("Enter Course For The Batch");
+                            String bcourse = sc.next();
+
+                            System.out.println("Enter Capacity for the Batch");
+                            int bcap = sc.nextInt();
+
+                            Batch batch = new Batch();
+
+                            batch.setBatchId(bid);
+                            batch.setBatchName(bname);
+                            batch.setBatchCourse(bcourse);
+                            batch.setBatchCapacity(bcap);
+
+                            String result = adao.createBatch(batch);
+                            System.out.println();
+                            System.out.println(result);
+                            System.out.println();
+                            System.out.println("==============================================================================================================");
                         }
                         if (choice == 6) {
 

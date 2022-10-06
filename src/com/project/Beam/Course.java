@@ -2,7 +2,7 @@ package com.project.Beam;
 
 public class Course {
 
-    private int courseId;
+    private String courseId;
     private String courseName;
     private String courseTeacher;
     private int courseFees;
@@ -12,18 +12,18 @@ public class Course {
     public Course() {
     }
 
-    public Course(int courseId, String courseName, String courseTeacher, int courseFees) {
+    public Course(String courseId, String courseName, String courseTeacher, int courseFees) {
         this.courseId = courseId;
         this.courseName = courseName;
         this.courseTeacher = courseTeacher;
         this.courseFees = courseFees;
     }
 
-    public int getCourseId() {
+    public String getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
 
