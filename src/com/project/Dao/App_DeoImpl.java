@@ -1,5 +1,6 @@
 package com.project.Dao;
 
+import com.project.Beam.Batch;
 import com.project.Beam.Course;
 import com.project.Beam.Student;
 import com.project.Exception.CourseException;
@@ -108,6 +109,22 @@ public class App_DeoImpl implements App_Dao {
             throw new CourseException(e.getMessage());
         }
        return course;
+    }
+
+    @Override
+    public String createBatch(Batch batch) {
+        String message = "Btach Not Created";
+
+        try(Connection conn = DBUtil.provideConnection()){
+
+            conn.prepareStatement("")
+
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+
+
+        return message;
     }
 
     @Override
