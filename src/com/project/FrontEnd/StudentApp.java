@@ -2,6 +2,7 @@ package com.project.FrontEnd;
 
 import com.project.Beam.Batch;
 import com.project.Beam.Course;
+import com.project.Beam.Student;
 import com.project.Dao.App_Dao;
 import com.project.Dao.App_DeoImpl;
 import com.project.Exception.CourseException;
@@ -169,6 +170,39 @@ public class StudentApp {
                             System.out.println("\n3. Can see all the available course list and their seat availability.");
                             System.out.println();
 
+                            int studentchoice = sc.nextInt();
+
+                            if(studentchoice == 1){
+
+                                System.out.println("Enter Student ID");
+                                String sid = sc.next();
+
+                                System.out.println("Enter Student Name");
+                                String studname = sc.next();
+
+                                System.out.println("Enter Course Which The Student Want to enroll ");
+                                String studcourse = sc.next();
+
+                                System.out.println("Enter Student Email ID");
+                                String studuser = sc.next();
+
+                                System.out.println("Enter Student Password");
+                                String studpass = sc.next();
+
+                                Student student = new Student();
+
+                                student.setStudentId(sid);
+                                student.setStudentName(studname);
+                                student.setStudentCourse(studcourse);
+                                student.setStudentEmail(studname);
+                                student.setStudentEmail(studpass);
+
+                                String result = adao.registerStudent(student);
+                                System.out.println();
+                                System.out.println(result);
+                                System.out.println();
+                                System.out.println("==============================================================================================================");
+                            }
                 case 3:
                             break;
                     }
